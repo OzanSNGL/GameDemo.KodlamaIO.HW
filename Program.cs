@@ -24,6 +24,12 @@ namespace GameDemo.KodlamaIO.HW
 
             Customer[] customers = new Customer[] { customer1, customer2, customer3 };
 
+            Offer offer1 = new Offer { GameName = "Red Dead Redemption II", Discount = 30, OfferEnds = new DateTime(2021, 04, 01) };
+            Offer offer2 = new Offer {GameName = "Stardew Valley", Discount = 50, OfferEnds = new DateTime(2021, 03, 01) };
+
+            List<Offer> allOffers = new List<Offer> { offer1, offer2 };
+
+            OfferManager offerManager = new OfferManager();
             GameManager gameManager = new GameManager();
             EDevletManager eDevletManager = new EDevletManager();
             CustomerManager customerManager = new CustomerManager();
@@ -70,6 +76,9 @@ namespace GameDemo.KodlamaIO.HW
                     case "2":
                         Console.WriteLine("All Games:");
                         gameManager.ListAll(lstGames);
+                        Console.WriteLine("------------------");
+                        offerManager.ShowOffers(allOffers);
+                        Console.WriteLine("------------------");
                         Console.WriteLine("Games on sale:");
                         gameManager.ListOnSale(lstGames);
                         Console.WriteLine("\r\nPlease enter a game ID to continue");
