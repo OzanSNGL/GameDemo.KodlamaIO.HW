@@ -8,5 +8,6 @@ namespace GameDemo.KodlamaIO.HW.Abstract
     interface IOfferService
     {
         void ShowOffers(List<Offer> allOffers);
+        void CalculateOffer(Game game);
     }
 }

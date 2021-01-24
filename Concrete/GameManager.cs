@@ -11,7 +11,7 @@ namespace GameDemo.KodlamaIO.HW.Concrete
     {
         public void AddToCart(Game game)
         {
-            Console.WriteLine(game.GameName + " has been added to your cart.\r\n");
+            Console.WriteLine(game.GameName + " has been added to your cart.");
         }
 
         public void BuyNow(Game game)

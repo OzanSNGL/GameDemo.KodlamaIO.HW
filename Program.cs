@@ -14,6 +14,7 @@ namespace GameDemo.KodlamaIO.HW
             Game game2 = new Game { GameID = 2, GameName = "Cyberpunk 2077", GamePrice = 70, GameStock = 1332, IsOnSale = false };
             Game game3 = new Game { GameID = 3, GameName = "GTA V", GamePrice = 30, GameStock = 54, IsOnSale = true };
             Game game4 = new Game { GameID = 4, GameName = "Civilization VI", GamePrice = 35, GameStock = 12, IsOnSale = true };
+            Game game5 = new Game { GameID = 5, GameName = "Red Dead Redemption", GamePrice = 80, GameStock = 101, IsOnSale = true };
 
             Game[] games = new Game[] { game1, game2, game3, game4 };
             List<Game> lstGames = new List<Game> { game1, game2, game3, game4 };
@@ -25,9 +26,8 @@ namespace GameDemo.KodlamaIO.HW
             Customer[] customers = new Customer[] { customer1, customer2, customer3 };
 
             Offer offer1 = new Offer { GameName = "Red Dead Redemption II", Discount = 30, OfferEnds = new DateTime(2021, 04, 01) };
-            Offer offer2 = new Offer {GameName = "Stardew Valley", Discount = 50, OfferEnds = new DateTime(2021, 03, 01) };
 
-            List<Offer> allOffers = new List<Offer> { offer1, offer2 };
+            List<Offer> allOffers = new List<Offer> { offer1};
 
             OfferManager offerManager = new OfferManager();
             GameManager gameManager = new GameManager();
@@ -95,10 +95,17 @@ namespace GameDemo.KodlamaIO.HW
                                 switch (o3)
                                 {
                                     case "1":
-                                        gameManager.AddToCart(game1);
+                                        gameManager.AddToCart(game2);
+                                        Console.WriteLine("You have special offers:");
+                                        Console.WriteLine("Rather than $" + game2.GamePrice + "\n");
+                                        offerManager.CalculateOffer(game2);
+                                        
                                         goto menu;
                                     case "2":
                                         gameManager.BuyNow(game1);
+                                        Console.WriteLine("You have special offers:");
+                                        Console.WriteLine("Rather than $" + game1.GamePrice + "\n");
+                                        offerManager.CalculateOffer(game1);
                                         goto menu;
                                 }
                             }

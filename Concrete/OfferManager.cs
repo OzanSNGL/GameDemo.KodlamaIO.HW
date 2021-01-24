@@ -15,5 +15,10 @@ namespace GameDemo.KodlamaIO.HW.Concrete
                 Console.WriteLine("SPECIAL OFFER! \r\n" + item.GameName + " IS NOW " + item.Discount + "% OFF UNTIL " + item.OfferEnds);
             }
         }
+        public void CalculateOffer(Game game)
+        {
+            game.GamePrice -= game.GamePrice * (0.50);
+            Console.WriteLine("Buy for only $" + game.GamePrice);
+        }
     }
 }

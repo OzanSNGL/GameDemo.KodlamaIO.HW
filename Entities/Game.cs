@@ -10,7 +10,7 @@ namespace GameDemo.KodlamaIO.HW.Entities
     {
         public int GameID { get; set; }
         public string GameName { get; set; }
-        public int GamePrice { get; set; }
+        public double GamePrice { get; set; }
         public int GameStock { get; set; }
         public bool IsOnSale { get; set; }
     }
