@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameDemo.KodlamaIO.HW", "GameDemo.KodlamaIO.HW.csproj", "{C1B829DA-536F-48B1-AA83-D8B040B8485E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1B829DA-536F-48B1-AA83-D8B040B8485E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B829DA-536F-48B1-AA83-D8B040B8485E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1B829DA-536F-48B1-AA83-D8B040B8485E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1B829DA-536F-48B1-AA83-D8B040B8485E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4620386-E260-4257-A9C5-79D82DC95353}
+	EndGlobalSection
+EndGlobal
