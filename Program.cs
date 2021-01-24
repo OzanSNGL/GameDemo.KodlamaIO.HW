@@ -53,6 +53,7 @@ namespace GameDemo.KodlamaIO.HW
                                     {
                                         eDevletManager.IsValidCustomer();
                                         customerManager.SignUp(new Customer());
+                                        goto menu;
                                     }
                                 }
                                 Console.WriteLine("You have entered a wrong Nationality ID Number.");
@@ -67,13 +68,11 @@ namespace GameDemo.KodlamaIO.HW
                         }
                         break;
                     case "2":
-                        gameManager.ListAll(lstGames);
                         Console.WriteLine("All Games:");
-                        Console.WriteLine("**");
+                        gameManager.ListAll(lstGames);
                         Console.WriteLine("Games on sale:");
                         gameManager.ListOnSale(lstGames);
-                        Console.WriteLine("**");
-                        Console.WriteLine("Please enter a game ID to continue");
+                        Console.WriteLine("\r\nPlease enter a game ID to continue");
                         int enteredNo = new int();
                         enteredNo = Convert.ToInt32(Console.ReadLine());
                         #region
@@ -88,10 +87,10 @@ namespace GameDemo.KodlamaIO.HW
                                 {
                                     case "1":
                                         gameManager.AddToCart(game1);
-                                        break;
+                                        goto menu;
                                     case "2":
                                         gameManager.BuyNow(game1);
-                                        break;
+                                        goto menu;
                                 }
                             }
                         }

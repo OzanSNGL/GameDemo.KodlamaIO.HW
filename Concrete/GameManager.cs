@@ -11,12 +11,12 @@ namespace GameDemo.KodlamaIO.HW.Concrete
     {
         public void AddToCart(Game game)
         {
-            Console.WriteLine(game.GameName + " has been added to your cart.");
+            Console.WriteLine(game.GameName + " has been added to your cart.\r\n");
         }
 
         public void BuyNow(Game game)
         {
-            Console.WriteLine("Buy " + game.GameName + " for only $" + game.GamePrice);
+            Console.WriteLine("Buy " + game.GameName + " for only $" + game.GamePrice + "\r\n");
         }
 
         public void ListAll(List<Game> lstGames)

@@ -20,7 +20,7 @@ namespace GameDemo.KodlamaIO.HW.Concrete
             }
             else
             {
-                Console.WriteLine("You have entered an invalid password. Please try again.");
+                Console.WriteLine("You have entered an invalid password. Please try again.\r\n");
                 goto pass;
             }
             
@@ -32,7 +32,7 @@ namespace GameDemo.KodlamaIO.HW.Concrete
             Console.ReadLine().ToString();
             Console.WriteLine("Please enter a new password: ");
             Console.ReadLine().ToString();
-            Console.WriteLine("Customer sign up successful.");
+            Console.WriteLine("Customer sign up successful.\r\n");
         }
 
         public void Update()
@@ -41,7 +41,7 @@ namespace GameDemo.KodlamaIO.HW.Concrete
             Console.ReadLine().ToString();
             Console.WriteLine("Please enter a new last name: ");
             Console.ReadLine().ToString();
-            Console.WriteLine("You have successfully updated your account.");
+            Console.WriteLine("You have successfully updated your account.\r\n");
         }
     }
 }
