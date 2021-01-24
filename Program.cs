@@ -2,6 +2,7 @@
 using GameDemo.KodlamaIO.HW.Abstract;
 using GameDemo.KodlamaIO.HW.Entities;
 using GameDemo.KodlamaIO.HW.Concrete;
+using System.Collections.Generic;
 
 namespace GameDemo.KodlamaIO.HW
 {
@@ -15,6 +16,7 @@ namespace GameDemo.KodlamaIO.HW
             Game game4 = new Game { GameID = 4, GameName = "Civilization VI", GamePrice = 35, GameStock = 12, IsOnSale = true };
 
             Game[] games = new Game[] { game1, game2, game3, game4 };
+            List<Game> lstGames = new List<Game> { game1, game2, game3, game4 };
 
             Customer customer1 = new Customer {Id = 1, FirstName = "Ozan", LastName = "Şengül", Password = "123", DateOfBirth=new DateTime(1997,11,05), NationalityID="29300054534" };
             Customer customer2 = new Customer { Id = 2, FirstName = "Tuncay", LastName = "Göçkon", Password = "321", DateOfBirth = new DateTime(1997, 07, 30), NationalityID = "21568251100" };
@@ -42,8 +44,18 @@ namespace GameDemo.KodlamaIO.HW
                         switch (o2)
                         {
                             case "1":
-                                eDevletManager.IsValidCustomer();
-                                customerManager.SignUp(new Customer());
+                                Console.WriteLine("Please enter your Nationality ID Number:");
+                                string enteredID = null;
+                                enteredID = Console.ReadLine();
+                                for (int y = 0; y < customers.Length; y++)
+                                {
+                                    if (enteredID == customers[y].NationalityID)
+                                    {
+                                        eDevletManager.IsValidCustomer();
+                                        customerManager.SignUp(new Customer());
+                                    }
+                                }
+                                Console.WriteLine("You have entered a wrong Nationality ID Number.");
                                 break;
                             case "2":
                                 Console.WriteLine("Please enter your password to continue:");
@@ -55,10 +67,11 @@ namespace GameDemo.KodlamaIO.HW
                         }
                         break;
                     case "2":
-                        gameopt: gameManager.ListAll();
+                        gameManager.ListAll(lstGames);
+                        Console.WriteLine("All Games:");
                         Console.WriteLine("**");
                         Console.WriteLine("Games on sale:");
-                        gameManager.ListOnSale();
+                        gameManager.ListOnSale(lstGames);
                         Console.WriteLine("**");
                         Console.WriteLine("Please enter a game ID to continue");
                         int enteredNo = new int();
@@ -80,13 +93,13 @@ namespace GameDemo.KodlamaIO.HW
                                         gameManager.BuyNow(game1);
                                         break;
                                 }
-                                break;
                             }
-                                
                         }
                         Console.WriteLine("You have entered a false game ID");
-                        goto gameopt;
                         #endregion
+                        goto menu;
+
+                    
                     case "3":
                         customerManager.Update();
                         goto menu;

@@ -10,7 +10,7 @@ namespace GameDemo.KodlamaIO.HW.Abstract
     {
         void AddToCart(Game game);
         void BuyNow(Game game);
-        void ListAll();
-        void ListOnSale();
+        void ListAll(List<Game> lstGames);
+        void ListOnSale(List<Game> lstGames);
     }
 }

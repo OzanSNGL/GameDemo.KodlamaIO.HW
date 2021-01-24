@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using GameDemo.KodlamaIO.HW.Abstract;
 using GameDemo.KodlamaIO.HW.Entities;
+using GameDemo.KodlamaIO.HW;
 
 namespace GameDemo.KodlamaIO.HW.Concrete
 {
-    class GameManager : IGameService
+    public class GameManager : IGameService
     {
         public void AddToCart(Game game)
         {
@@ -18,14 +19,23 @@ namespace GameDemo.KodlamaIO.HW.Concrete
             Console.WriteLine("Buy " + game.GameName + " for only $" + game.GamePrice);
         }
 
-        public void ListAll()
+        public void ListAll(List<Game> lstGames)
         {
-            Console.WriteLine("All games are listed.");
+            foreach (var item in lstGames)
+            {
+                Console.WriteLine("Game ID: " + item.GameID + " / " + item.GameName + " - " + "$" + item.GamePrice + " / " + item.GameStock + " are in stock.");
+            }
         }
 
-        public void ListOnSale()
+        public void ListOnSale(List<Game> lstGames)
         {
-            Console.WriteLine("All games on sale are listed.");
+            for (int i = 0; i < lstGames.Count; i++)
+            {
+                if (lstGames[i].IsOnSale == true)
+                {
+                    Console.WriteLine("Game ID: " + lstGames[i].GameID + " / " + lstGames[i].GameName + " - " + "$" + lstGames[i].GamePrice + " / " + lstGames[i].GameStock + " are in stock.");
+                }
+            }
         }
     }
 }
