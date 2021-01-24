@@ -4,10 +4,9 @@ using System.Text;
 
 namespace GameDemo.KodlamaIO.HW.Entities
 {
-    class Offer
+    class Offer : Game
     {
         public DateTime OfferEnds { get; set; }
         public int Discount { get; set; }
-        public string GameName { get; set; }
     }
 }

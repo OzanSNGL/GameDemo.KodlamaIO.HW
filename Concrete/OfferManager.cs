@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GameDemo.KodlamaIO.HW.Concrete
 {
-    class OfferManager : IOfferService
+    class OfferManager : GameManager, IOfferService
     {
         public void ShowOffers(List<Offer> allOffers)
         {
